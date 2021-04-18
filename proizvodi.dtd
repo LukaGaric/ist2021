@@ -1,0 +1,34 @@
+<!ELEMENT Proizvodi (Proizvod)+>
+<!ELEMENT Proizvod (Kategorija, Cena, TekstOglasa, Oznake, Akcija)>
+<!ELEMENT Kategorija (#PCDATA)>
+<!ELEMENT Cena (#PCDATA)>
+<!ELEMENT TekstOglasa (#PCDATA)>
+<!ELEMENT Oznake (Oznaka)*>
+<!ELEMENT Oznaka (#PCDATA)>
+<!ELEMENT Akcija EMPTY>
+<!ATTLIST Kategorija kategorija (maticne|ram|procesori|graficke) #REQUIRED>
+<!ATTLIST Cena valuta (eur|rsd) "rsd">
+<!ATTLIST Akcija cena CDATA #IMPLIED>
+<!ATTLIST Akcija datumIsteka CDATA #IMPLIED>
+<!-- 
+U fajlu proizvodi.xml kreirati podatke o Proizvodima u veb prodavnici. Proizvod je opisan sledećim elementima:
+
+Kategorija proizvoda – sadrži obavezno jednu od
+predefinisanih kategorija (npr. laptopovi, monitori, stolovi, stolice…)
+
+Cena – iznos. Cena je dodatno opisana atributom valuta koji
+podrazumevano označava dinare. 
+
+Tekst oglasa – isključivo tekstualni sadržaj bez umetnutih
+elemenata. 
+
+Oznaka (tag) oglasa – jedan proizvod može imati više
+oznaka. Oznaka bliže opisuje proizvod i nema ograničen
+skup vrednosti. Oznake nisu u hijerarhijskoj relaciji
+međusobno. 
+
+Akcija proizvoda –Akcija je dodatno opisana atributom
+cena ako je na akciji koliko sada iznosi njegova cena. Takođe ima atribut datum isteka do kada važi akcija.
+Jedan proizvod na akciji može biti više puta i svaki put
+imati drugu cenu. 
+-->
