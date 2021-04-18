@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+U fajlu proizvodi.xml kreirati podatke o Proizvodima u veb prodavnici. Proizvod je opisan sledećim elementima:
+
+Kategorija proizvoda – sadrži obavezno jednu od
+predefinisanih kategorija (npr. laptopovi, monitori, stolovi, stolice…)
+
+Cena – iznos. Cena je dodatno opisana atributom valuta koji
+podrazumevano označava dinare. 
+
+Tekst oglasa – isključivo tekstualni sadržaj bez umetnutih
+elemenata. 
+
+Oznaka (tag) oglasa – jedan proizvod može imati više
+oznaka. Oznaka bliže opisuje proizvod i nema ograničen
+skup vrednosti. Oznake nisu u hijerarhijskoj relaciji
+međusobno. 
+
+Akcija proizvoda –Akcija je dodatno opisana atributom
+cena ako je na akciji koliko sada iznosi njegova cena. Takođe ima atribut datum isteka do kada važi akcija.
+Jedan proizvod na akciji može biti više puta i svaki put
+imati drugu cenu.
+ -->
+<Proizvodi>
+    <Proizvod>
+        <Kategorija kategorija="graficke">Graficke Kartice</Kategorija>
+        <Cena valuta="rsd">29990</Cena>
+        <TekstOglasa>GTX 1660 super 6gb</TekstOglasa>
+        <Oznake>
+            <Oznaka>4</Oznaka>
+        </Oznake>
+        <Akcija cena="24990" datumIsteka="29.04.2021"></Akcija>
+    </Proizvod>
+    <Proizvod>
+        <Kategorija kategorija="procesori">Procesori</Kategorija>
+        <Cena>24690</Cena>
+        <TekstOglasa>AMD Ryzen 5 2600</TekstOglasa>
+        <Oznake>
+            <Oznaka>3</Oznaka>
+        </Oznake>
+        <Akcija></Akcija>
+    </Proizvod>
+    <Proizvod>
+        <Kategorija kategorija="maticne">Maticne Ploce</Kategorija>
+        <Cena valuta="rsd">12399</Cena>
+        <TekstOglasa>MSI B450 TOMAHAWK MAX</TekstOglasa>
+        <Oznake>
+            <Oznaka>1</Oznaka>
+        </Oznake>
+        <Akcija cena="10990" datumIsteka="26.04.2021"></Akcija>
+    </Proizvod>
+</Proizvodi>
