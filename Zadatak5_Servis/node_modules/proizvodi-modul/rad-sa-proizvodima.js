@@ -1,5 +1,5 @@
 const fs = require('fs');
-const PATH = "proizvodi.json";
+const PATH = 'proizvodi.json';
 
 let procitajPodatkeIzFajla = () => {
     let proizvodi = fs.readFileSync(PATH, (err, data) => {
@@ -17,7 +17,7 @@ exports.sviProizvodi = () => {
     return procitajPodatkeIzFajla();
 }
 exports.dodajProizvod = (novProizvod) => {
-    id = 1;
+    let id = 1;
     let proizvodi = this.sviProizvodi();
     if (proizvodi.length > 0) {
         id = proizvodi[proizvodi.length - 1].id + 1;
@@ -26,16 +26,7 @@ exports.dodajProizvod = (novProizvod) => {
     proizvodi.push(novProizvod)
     snimiProizvode(proizvodi);
 }
-// exports.getKnjiga = (id) => {
-//     return this.sveKnjige().find(x => x.id == id);
-// }
-// exports.postaviAutora = (naziv, autor) => {
-//     let knjige = this.sveKnjige().filter(knjiga => knjiga.naziv == naziv);
-//     knjige.forEach(element => {
-//         element.autor = autor;
-//     });
-//     snimiKnjige(knjige);
-// }
+
 exports.obrisiProizvod = (id) => {
     snimiProizvode(this.sviProizvodi().filter(proizvod => proizvod.id != id));
 }

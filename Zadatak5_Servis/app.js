@@ -3,6 +3,9 @@ const proizvodiServis = require('proizvodi-modul');
 
 app = express();
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 app.get('/sviProizvodi', (req, res) => {
     res.send(proizvodiServis.sviProizvodi());
 })
@@ -21,10 +24,11 @@ app.delete('/obrisiProizvod/:id', (req, res) => {
     res.end("OK");
 });
 
-app.post('/promeniProizvod', (req, res) => {
-    proizvodiServis.izmeniProizvod({ "kategorija": req.query.kategorija, "cena": req.query.cena, "id": req.query.id });
+app.post('/izmeniProizvod', (req, res) => {
+    proizvodiServis.izmeniProizvod(req.body);
     res.end("ok");
 })
+
 
 app.listen(3000, () => {
     console.log('Server radi na portu 3000');
