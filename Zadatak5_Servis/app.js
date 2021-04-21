@@ -10,10 +10,6 @@ app.get('/sviProizvodi', (req, res) => {
     res.send(proizvodiServis.sviProizvodi());
 })
 
-app.get("/proizvodiIzKategorije", (req, res) => {
-    res.send(proizvodiServis.proizvodiIzKategorije(request.query["kategorija"]))
-})
-
 app.post('/dodajProizvod', (req, res) => {
     proizvodiServis.dodajProizvod(req.body);
     res.end("OK");
@@ -29,6 +25,9 @@ app.post('/izmeniProizvod', (req, res) => {
     res.end("ok");
 })
 
+app.post('/filtriraj', (req, res) => {
+    res.send(proizvodiServis.filtriraj(req.body.kategorija));
+})
 
 app.listen(3000, () => {
     console.log('Server radi na portu 3000');

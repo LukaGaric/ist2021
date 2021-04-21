@@ -31,8 +31,8 @@ exports.obrisiProizvod = (id) => {
     snimiProizvode(this.sviProizvodi().filter(proizvod => proizvod.id != id));
 }
 
-exports.proizvodiIzKategorije = (kategorija) => {
-    return this.sviProizvodi().filter(proizvod => proizvod.kategorija == kategorija);
+exports.filtriraj = (kategorija) => {
+    return this.sviProizvodi().filter(proizvod => proizvod.kategorija.toLowerCase().includes(kategorija.toLowerCase()));
 }
 
 exports.izmeniProizvod = (proizvod1) => {

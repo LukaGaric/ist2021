@@ -108,6 +108,25 @@ app.post('/izmeni/:id', (req, res) => {
         })
 })
 
+app.post('/filtriraj', (req, res) => {
+    axios.post('http://localhost:3000/filtriraj', { kategorija: req.body.kategorija })
+        .then(response => {
+            let prikaz = "";
+            response.data.forEach(element => {
+                prikaz += `<tr>
+                                <td>${element.kategorija}</td>
+                                <td>${element.tekstOglasa}</td>
+                                <td>${element.cena}</td>
+                                <td><a href="/izmeni/${element.id}">Izmeni</a></td>
+                                <td><a href="/obrisi/${element.id}">Obrisi</a></td>
+                            </tr>`;
+            });
+            res.send(procitajPogledZaNaziv("sviProizvodi").replace("#{data}", prikaz));
+        })
+        .catch(error => {
+            console.log(error);
+        });
+})
 
 app.listen(5000, () => {
     console.log('klijent na portu 5000');
