@@ -109,6 +109,8 @@ app.post('/izmeni/:id', (req, res) => {
 })
 
 app.post('/filtriraj', (req, res) => {
+
+    let kategorije = '';
     axios.post('http://localhost:3000/filtriraj', { kategorija: req.body.kategorija })
         .then(response => {
             let prikaz = "";
@@ -121,6 +123,7 @@ app.post('/filtriraj', (req, res) => {
                                 <td><a href="/obrisi/${element.id}">Obrisi</a></td>
                             </tr>`;
             });
+
             res.send(procitajPogledZaNaziv("sviProizvodi").replace("#{data}", prikaz));
         })
         .catch(error => {

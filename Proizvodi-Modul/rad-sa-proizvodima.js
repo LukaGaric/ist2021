@@ -45,3 +45,4 @@ exports.izmeniProizvod = (proizvod1) => {
     });
     snimiProizvode(proizvodi);
 }
+

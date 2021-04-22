@@ -29,6 +29,7 @@ app.post('/filtriraj', (req, res) => {
     res.send(proizvodiServis.filtriraj(req.body.kategorija));
 })
 
+
 app.listen(3000, () => {
     console.log('Server radi na portu 3000');
 })
