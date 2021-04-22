@@ -1,14 +1,1 @@
-[
-    {
-        "id": 1,
-        "kategorija": "Graficke Kartice",
-        "cena": 36990,
-        "tekstOglasa": "GTX 1660 super 6gb"
-    },
-    {
-        "id": 2,
-        "kategorija": "Procesori",
-        "cena": "26990",
-        "tekstOglasa": "AMD Ryzen 5 3600"
-    }
-]
+[{"id":1,"kategorija":"Graficke Kartice","cena":"36990","tekstOglasa":"GTX 1660 super 6gb"},{"id":2,"kategorija":"Procesori","cena":"29990","tekstOglasa":"AMD Ryzen 5 3600X"}]

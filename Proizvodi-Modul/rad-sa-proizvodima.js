@@ -39,8 +39,9 @@ exports.izmeniProizvod = (proizvod1) => {
     proizvodi = this.sviProizvodi();
     proizvodi.forEach(proizvod => {
         if (proizvod.id == proizvod1.id) {
+            proizvod.tekstOglasa = proizvod1.tekstOglasa
             proizvod.kategorija = proizvod1.kategorija
-            proizvod.cena = proizvod1.cena;
+            proizvod.cena = proizvod1.cena
         }
     });
     snimiProizvode(proizvodi);
